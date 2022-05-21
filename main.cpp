@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     /*应用样式表*/
     QString qss;
-    QFile qssFile(":/darkmode.qss");
+    QFile qssFile(":/Ubuntu.qss");
     qssFile.open(QFile::ReadOnly);
     if(qssFile.isOpen())
     {

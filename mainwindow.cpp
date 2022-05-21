@@ -7,12 +7,44 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     saved = true;
+    init_ui();
+    init_connects();
     connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(on_edited()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::init_ui()
+{
+    ui->toolBar->addSeparator();
+
+    fontCombo = new QFontComboBox();
+    fontCombo->setMinimumWidth(20);
+    ui->toolBar->addWidget(new QLabel("字体:"));
+    ui->toolBar->addWidget(fontCombo);
+
+    /*增加一个字体大小选择框*/
+    ui->toolBar->addSeparator();
+    fontSize = new QSpinBox();
+    fontSize->setMinimumWidth(70);
+    fontSize->setMinimum(5);
+    fontSize->setMaximum(100);
+    ui->toolBar->addWidget(new QLabel("字体大小:"));
+    ui->toolBar->addWidget(fontSize);
+
+    setWindowTitle("Notebook");
+
+    /*设置光标*/
+    setCursor(Qt::CrossCursor);
+}
+
+void MainWindow::init_connects()
+{
+    connect(fontSize, SIGNAL(valueChanged(int)), this, SLOT(on_fontSize_Changed(int)));
+    connect(fontCombo, SIGNAL(currentIndexChanged(const QString&)), this, SLOT(on_fontCombo_Changed(const QString&)));
 }
 
 void MainWindow::on_actionsave_triggered(bool checked)
@@ -38,7 +70,7 @@ void MainWindow::on_actionsave_triggered(bool checked)
     }else{
         qDebug() << "打开文件失败" << endl;
         /*提示打开文件失败*/
-        QMessageBox::critical(NULL, "错误", "无法打开文件", QMessageBox::Yes, QMessageBox::Yes);
+        QMessageBox::critical(NULL, "错误", "保存失败", QMessageBox::Yes, QMessageBox::Yes);
     }
 
     /*关闭文件*/
@@ -130,5 +162,113 @@ void MainWindow::on_actionopen_triggered(bool checked)
 void MainWindow::on_actionpaste_triggered(bool checked)
 {
     qDebug() << "粘贴..." << endl;
+    QClipboard *c = QApplication::clipboard();
+    /*粘贴到光标处*/
     ui->textEdit->paste();
+}
+
+void MainWindow::on_actioncopy_triggered(bool checked)
+{
+    qDebug() << "复制..." << endl;
+    QClipboard* c = QApplication::clipboard();
+    /*选定内容*/
+    QString content = ui->textEdit->textCursor().selectedText();
+    /*粘贴到剪切板上*/
+    c->setText(content);
+}
+
+void MainWindow::on_actioncut_triggered(bool checked)
+{
+    qDebug() << "剪切..." << endl;
+    QClipboard* c = QApplication::clipboard();
+    /*选定内容*/
+    QString content = ui->textEdit->textCursor().selectedText();
+    /*粘贴到剪切板上*/
+    c->setText(content);
+
+    /*删除选定的内容*/
+    QString text = ui->textEdit->toPlainText();
+    text.remove(content);
+    ui->textEdit->setText(text);
+}
+
+void MainWindow::on_fontCombo_Changed(const QString& fontcombo)
+{
+    QTextCharFormat f;
+    /*设置字体*/
+    f.setFontFamily(fontcombo);
+    ui->textEdit->mergeCurrentCharFormat(f);
+}
+
+void MainWindow::on_fontSize_Changed(int fontsize)
+{
+    QTextCharFormat f;
+    /*设置字体大小*/
+    f.setFontPointSize(fontsize);
+    ui->textEdit->mergeCurrentCharFormat(f);
+}
+
+void MainWindow::on_actionitalic_triggered(bool checked)
+{
+    QTextCharFormat f;
+    /*获取目前字体*/
+    f = ui->textEdit->currentCharFormat();
+    if(checked){
+        f.setFontItalic(true);
+    }else{
+        f.setFontItalic(false);
+    }
+    ui->textEdit->mergeCurrentCharFormat(f);
+}
+
+void MainWindow::on_actionbold_triggered(bool checked)
+{
+    QTextCharFormat f;
+    /*获取目前字体*/
+    f = ui->textEdit->currentCharFormat();
+    if(checked){
+        f.setFontWeight(QFont::Bold);
+    }else{
+        f.setFontWeight(QFont::Normal);
+    }
+    ui->textEdit->mergeCurrentCharFormat(f);
+}
+
+void MainWindow::on_actionunderline_triggered(bool checked)
+{
+    QTextCharFormat f;
+    /*获取目前字体*/
+    f = ui->textEdit->currentCharFormat();
+    if(checked){
+        f.setFontUnderline(true);
+    }else{
+        f.setFontUnderline(false);
+    }
+    ui->textEdit->mergeCurrentCharFormat(f);
+}
+
+void MainWindow::on_actionlookup_triggered()
+{
+    dial = new SearchDialog(this);
+    dial->show();
+}
+
+void MainWindow::on_actionphoto_triggered()
+{
+    QString file = QFileDialog::getOpenFileName(this, tr("选择图片"),
+                                                ".",tr("BMP (*.bmp)\n"
+                                                       "JPEG (*.jpg *.jpeg)\n"
+                                                       "GIF (*.gif)\n"
+                                                       "PNG (*.png)\n"));
+
+    QUrl Uri(QString("file://%1").arg(file));
+    QImage image = QImageReader(file).read();
+    QTextDocument* textDocument = ui->textEdit->document();
+    textDocument->addResource(QTextDocument::ImageResource, Uri, QVariant(image));
+    QTextCursor cursor = ui->textEdit->textCursor();
+    QTextImageFormat imageFormat;
+    imageFormat.setWidth(image.width());
+    imageFormat.setHeight(image.height());
+    imageFormat.setName(Uri.toString());
+    cursor.insertImage(imageFormat);
 }
