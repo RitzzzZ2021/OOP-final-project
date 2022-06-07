@@ -1,15 +1,1 @@
-<RCC>
-    <qresource prefix="/myImages">
-        <file>image/复制.png</file>
-        <file>image/保存.png</file>
-        <file>image/复制 (1).png</file>
-        <file>image/新建.png</file>
-        <file>image/粘贴.png</file>
-        <file>image/剪切.png</file>
-        <file>image/粗体.png</file>
-        <file>image/斜体 (1).png</file>
-        <file>image/03下划线.png</file>
-        <file>image/文本斜体.png</file>
-        <file>image/图片.png</file>
-    </qresource>
-</RCC>
+<RCC/>

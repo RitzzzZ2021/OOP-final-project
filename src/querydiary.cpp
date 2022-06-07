@@ -1,4 +1,4 @@
-#include "querydiary.h"
+#include "include/querydiary.h"
 
 QueryDiary::QueryDiary() {}
 

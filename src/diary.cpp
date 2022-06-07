@@ -1,4 +1,4 @@
-#include "diary.h"
+#include "include/diary.h"
 
 Diary::Diary() {}
 
@@ -76,10 +76,10 @@ QDate Diary::get_diary_date() const
  */
 void Diary::set_diary_metadata(const QString& _weather, const QString& _location, const QString& _mood, const QString& _comment)
 {
-    if(_weather.length() > 10) throw(EXCEP_WEATHER);
-    if(_location.length() > 25) throw(EXCEP_LOCATION);
-    if(_mood.length() > 10) throw(EXCEP_MOOD);
-    if(_comment.length() > 50) throw(EXCEP_COMMENT);
+    if(_weather.length() > 10) throw EXCEP_WEATHER;
+    if(_location.length() > 25) throw EXCEP_LOCATION;
+    if(_mood.length() > 10) throw EXCEP_MOOD;
+    if(_comment.length() > 50) throw EXCEP_COMMENT;
     diary_meta_data.set_all(_weather, _location, _mood, _comment);
 }
 
@@ -89,7 +89,7 @@ void Diary::set_diary_metadata(const QString& _weather, const QString& _location
  */
 void Diary::set_weather(const QString& _weather)
 {
-    if(_weather.length() > 10) throw(EXCEP_WEATHER);
+    if(_weather.length() > 10) throw EXCEP_WEATHER;
     diary_meta_data.set_weather(_weather);
 }
 
@@ -99,7 +99,7 @@ void Diary::set_weather(const QString& _weather)
  */
 void Diary::set_location(const QString& _location)
 {
-    if(_location.length() > 25) throw(EXCEP_LOCATION);
+    if(_location.length() > 25) throw EXCEP_LOCATION;
     diary_meta_data.set_location(_location);
 }
 
@@ -109,7 +109,7 @@ void Diary::set_location(const QString& _location)
  */
 void Diary::set_mood(const QString& _mood)
 {
-    if(_mood.length() > 10) throw(EXCEP_MOOD);
+    if(_mood.length() > 10) throw EXCEP_MOOD;
     diary_meta_data.set_mood(_mood);
 }
 
@@ -119,7 +119,7 @@ void Diary::set_mood(const QString& _mood)
  */
 void Diary::set_comment(const QString& _comment)
 {
-    if(_comment.length() > 50) throw(EXCEP_COMMENT);
+    if(_comment.length() > 50) throw EXCEP_COMMENT;
     diary_meta_data.set_comment(_comment);
 }
 
@@ -243,4 +243,13 @@ QList<Paragraph *>& Diary::get_paragraphs()
 const QList<Paragraph *>& Diary::get_paragraphs() const
 {
     return paragraphs;
+}
+
+/**
+ * @brief append_para不要调用此函数！该函数不会更改段落的para_id
+ * @param p段落
+ */
+void Diary::append_para(Paragraph* p)
+{
+    paragraphs.append(p);
 }

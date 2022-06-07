@@ -1,10 +1,8 @@
 #ifndef DIARY_H
 #define DIARY_H
 
-#include "paragraph.h"
-#include "diarymetadata.h"
-#include <QString>
-#include <QDate>
+#include "include/paragraph.h"
+#include "include/diarymetadata.h"
 #include <QList>
 
 enum DIARY_METADATA_LENGTH_EXCPTION { EXCEP_WEATHER, EXCEP_LOCATION, EXCEP_MOOD, EXCEP_COMMENT};
@@ -35,6 +33,7 @@ public:
     void trans_para_pos(int target, int des);
     QList<Paragraph *>& get_paragraphs();
     const QList<Paragraph *>& get_paragraphs() const;
+    void append_para(Paragraph* p);
 protected:
     QDate diary_date;//一篇日记的日期，一个日期只能有一篇日记
     DiaryMetaData diary_meta_data;//日记的metadata

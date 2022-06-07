@@ -1,4 +1,4 @@
-#include "paragraph.h"
+#include "include/paragraph.h"
 
 
 Paragraph::Paragraph() {}
@@ -77,7 +77,7 @@ Paragraph::~Paragraph() {}
  */
 void Paragraph::set_metadata(const QDate& _cdate, const QTime& _ctime, const QDate& _edate, const QTime& _etime, const QString& _path)
 {
-    if(_path.length() > 50) { throw(EXCEP_PATH_LEN); }
+    if(_path.length() > 50) { throw EXCEP_PATH_LEN; }
     meta_data.set_create_date_time(_cdate, _ctime);
     meta_data.set_edit_date_time(_edate, _etime);
     meta_data.set_path(_path);
@@ -144,7 +144,7 @@ void Paragraph::get_edit_date_time(QDate& _edate, QTime& _etime) const
  */
 void Paragraph::set_path(const QString& _path)
 {
-    if(_path.length() > 50) { throw(EXCEP_PATH_LEN); }
+    if(_path.length() > 50) { throw EXCEP_PATH_LEN; }
     meta_data.set_path(_path);
 }
 
@@ -212,7 +212,7 @@ void Paragraph::get_diary_belong_id(QDate& _belong, int& _id) const
  */
 void Paragraph::add_tags(const QString& new_tag)
 {
-    if(new_tag.length() > 20) { throw(EXCEP_TAGS_LEN); }
+    if(new_tag.length() > 20) { throw EXCEP_TAGS_LEN; }
     if(tags.count(new_tag) == 0) { tags << new_tag; }
 }
 

@@ -1,9 +1,7 @@
 #ifndef QUERYDIARY_H
 #define QUERYDIARY_H
 
-#include <QList>
-#include "paragraph.h"
-#include "diary.h"
+#include "include/diary.h"
 
 class QueryDiary
 {
@@ -11,6 +9,10 @@ public:
     QueryDiary();
     ~QueryDiary();
     QList<Diary *>& get_diarys();
+    void add_diary(Diary* nd)
+    {
+        diarys.append(nd);
+    }
 private:
     QList<Diary *> diarys;//返回的日记链表
 };

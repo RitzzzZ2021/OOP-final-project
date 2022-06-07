@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets sql testlib
 
 CONFIG += c++11
 
@@ -18,9 +18,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    searchdialog.cpp
+    searchdialog.cpp \
+    src/diary.cpp \
+    src/diarymetadata.cpp \
+    src/editdiary.cpp \
+    src/editmanager.cpp \
+    src/infomanager.cpp \
+    src/metadata.cpp \
+    src/paragraph.cpp \
+    src/querydiary.cpp \
+    src/querymanager.cpp \
+    test/QueryManager_Test.cpp
 
 HEADERS += \
+    include/diary.h \
+    include/diarymetadata.h \
+    include/editdiary.h \
+    include/editmanager.h \
+    include/infomanager.h \
+    include/metadata.h \
+    include/paragraph.h \
+    include/querydiary.h \
+    include/querymanager.h \
     mainwindow.h \
     searchdialog.h
 

@@ -1,11 +1,7 @@
 #ifndef EDITDIARY_H
 #define EDITDIARY_H
 
-#include "diary.h"
-#include "paragraph.h"
-#include "editmanager.h"
-#include <QDate>
-#include <QTime>
+#include "include/diary.h"
 
 class EditDiary: public Diary
 {

@@ -1,10 +1,7 @@
 #ifndef PARAGRAPH_H
 #define PARAGRAPH_H
 
-#include "diary.h"
-#include "metadata.h"
-#include <QDate>
-#include <QTime>
+#include "include/metadata.h"
 #include <QString>
 #include <QList>
 

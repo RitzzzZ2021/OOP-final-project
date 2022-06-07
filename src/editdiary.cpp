@@ -1,4 +1,4 @@
-#include "editdiary.h"
+#include "include/editdiary.h"
 
 EditDiary::EditDiary() {}
 

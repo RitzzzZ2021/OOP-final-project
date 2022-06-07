@@ -1,4 +1,4 @@
-#include "diarymetadata.h"
+#include "include/diarymetadata.h"
 
 
 DiaryMetaData::DiaryMetaData() {}
