@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InfoDialog</class>
+ <widget class="QDialog" name="InfoDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diary Info</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="myResources.qrc">
+    <normaloff>:/myImages/image/标签.png</normaloff>:/myImages/image/标签.png</iconset>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>SimSun-ExtB</family>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Mood</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_mood">
+        <item>
+         <property name="text">
+          <string>开心</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>伤心</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>生气</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>平静</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>无言以对</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>尴尬</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>乐</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>惊讶</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>狂喜</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>累</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>遗憾</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>暴怒</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>烦躁</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>紧张</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>兴奋</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>期待</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>自闭</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="dateEdit">
+        <property name="contextMenuPolicy">
+         <enum>Qt::DefaultContextMenu</enum>
+        </property>
+        <property name="maximumDateTime">
+         <datetime>
+          <hour>23</hour>
+          <minute>59</minute>
+          <second>59</second>
+          <year>2022</year>
+          <month>12</month>
+          <day>31</day>
+         </datetime>
+        </property>
+        <property name="displayFormat">
+         <string>yyyy/MM/dd</string>
+        </property>
+        <property name="date">
+         <date>
+          <year>2022</year>
+          <month>5</month>
+          <day>1</day>
+         </date>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,4">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Weather</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_weather">
+        <item>
+         <property name="text">
+          <string>Sunny</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-晴.png</normaloff>:/myImages/image/天气-晴.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cloudy</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-多云.png</normaloff>:/myImages/image/天气-多云.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Heavy Rain</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-暴雨.png</normaloff>:/myImages/image/天气-暴雨.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Light Rain</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-小雨.png</normaloff>:/myImages/image/天气-小雨.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Heavy Snow</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-大雪.png</normaloff>:/myImages/image/天气-大雪.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Light Snow</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-小雪.png</normaloff>:/myImages/image/天气-小雪.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Thunder Storm</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-雷雨.png</normaloff>:/myImages/image/天气-雷雨.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fog</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-雾霾.png</normaloff>:/myImages/image/天气-雾霾.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hail</string>
+         </property>
+         <property name="icon">
+          <iconset resource="myResources.qrc">
+           <normaloff>:/myImages/image/天气-冰雹.png</normaloff>:/myImages/image/天气-冰雹.png</iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,4">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Location</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_location">
+        <item>
+         <property name="text">
+          <string>北京</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>杭州</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>上海</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>广州</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>南京</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>成都</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>重庆</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>长沙</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>天津</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>绍兴</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>乌鲁木齐</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>昆明</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>银川</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>南昌</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>南宁</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>西安</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>深圳</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>厦门</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>福州</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>长春</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>哈尔滨</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>沈阳</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>大连</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>济南</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>青岛</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>太原</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>衡水</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>洛阳</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>郑州</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>石家庄</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>张家界</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>张家口</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>海口</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New York</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>London</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,4">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Comment</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>260</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Set</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="myResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

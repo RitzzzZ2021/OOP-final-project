@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/myImages">
+        <file>image/复制.png</file>
+        <file>image/保存.png</file>
+        <file>image/复制 (1).png</file>
+        <file>image/新建.png</file>
+        <file>image/粘贴.png</file>
+        <file>image/剪切.png</file>
+        <file>image/粗体.png</file>
+        <file>image/斜体 (1).png</file>
+        <file>image/03下划线.png</file>
+        <file>image/文本斜体.png</file>
+        <file>image/图片.png</file>
+        <file>image/天气-暴雨.png</file>
+        <file>image/天气-大雪.png</file>
+        <file>image/天气-多云.png</file>
+        <file>image/天气-雷雨.png</file>
+        <file>image/天气-晴.png</file>
+        <file>image/天气-雾霾.png</file>
+        <file>image/天气-小雪.png</file>
+        <file>image/天气-小雨.png</file>
+        <file>image/天气-阴天.png</file>
+        <file>image/天气-冰雹.png</file>
+        <file>image/标签.png</file>
+        <file>image/搜索.png</file>
+        <file>image/copy.png</file>
+        <file>image/icon_帮助文档.png</file>
+        <file>image/icon_保存.png</file>
+        <file>image/icon_添加.png</file>
+        <file>image/mysql.png</file>
+        <file>image/打开.png</file>
+        <file>image/复制 (2).png</file>
+        <file>image/功能定义.png</file>
+        <file>image/图片添加.png</file>
+        <file>image/文件夹.png</file>
+        <file>image/新增.png</file>
+        <file>image/形状-图片.png</file>
+        <file>image/形状-文字.png</file>
+        <file>image/修改.png</file>
+        <file>image/字体加粗.png</file>
+        <file>image/字体下划线.png</file>
+        <file>image/字体斜体.png</file>
+        <file>image/上一步.png</file>
+        <file>image/下一步.png</file>
+        <file>image/icon_疑问空心.png</file>
+        <file>image/搜.png</file>
+    </qresource>
+</RCC>
